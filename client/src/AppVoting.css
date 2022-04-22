@@ -1,0 +1,55 @@
+.AppVoting {
+    text-align: center;
+}
+
+.AppVoting-logo {
+    height: 40vmin;
+}
+
+.AppVoting-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.AppVoting-link {
+    color: #09d3ac;
+}
+
+.AppVoting-Header {
+    font-size: calc(5px + 1vmin);
+    text-align: right;
+    margin: 5px;
+}
+
+.AppVoting-WorkflowStatus {
+    text-align: center;
+    margin: 5px;
+    background-color: black;
+    height: 250px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.AppVoting-WorkflowStatus-1 {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height: 90%;
+    width: 90%;
+    background-color: white;
+}
+
+.imgNotVoter {
+    height: 160px;
+}
+
+.imgStatus {
+    height: 120px;
+}
