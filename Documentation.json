@@ -1,0 +1,98 @@
+{
+  "author": "Cyril and Alexis",
+  "details": "There are comment codes (only visible in the source code) for possible improvements, later",
+  "events":
+  {
+    "ProposalRegistered(uint256)":
+    {
+      "params":
+      {
+        "_proposalId": "id of the registered proposal"
+      }
+    },
+    "Voted(address,uint256)":
+    {
+      "params":
+      {
+        "_proposalId": "id of the proposal voted",
+        "_voter": "voter's address"
+      }
+    },
+    "VoterRegistered(address)":
+    {
+      "params":
+      {
+        "_voterAddress": "voter's address"
+      }
+    },
+    "WorkflowStatusChange(uint8,uint8)":
+    {
+      "params":
+      {
+        "_newStatus": "new status",
+        "_previousStatus": "previous status"
+      }
+    }
+  },
+  "kind": "dev",
+  "methods":
+  {
+    "addProposal(string)":
+    {
+      "params":
+      {
+        "_desc": "Description of the proposal to be registered"
+      }
+    },
+    "addVoter(address)":
+    {
+      "params":
+      {
+        "_addr": "Address of the voter to be registered"
+      }
+    },
+    "getOneProposal(uint256)":
+    {
+      "params":
+      {
+        "_id": "id of the proposal to find"
+      },
+      "returns":
+      {
+        "_0": "a proposal structure"
+      }
+    },
+    "getVoter(address)":
+    {
+      "params":
+      {
+        "_addr": "address of the voter to find"
+      },
+      "returns":
+      {
+        "_0": "a voter structure"
+      }
+    },
+    "owner()":
+    {
+      "details": "Returns the address of the current owner."
+    },
+    "renounceOwnership()":
+    {
+      "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+    },
+    "setVote(uint256)":
+    {
+      "params":
+      {
+        "_id": "id of the proposal to be voted on"
+      }
+    },
+    "transferOwnership(address)":
+    {
+      "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+    }
+  },
+  "title": "Voting contract",
+  "version": 1
+}
