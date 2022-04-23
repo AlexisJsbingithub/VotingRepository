@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/VotingRepository/static/css/main.1383865a.chunk.css",
-    "main.js": "/VotingRepository/static/js/main.01c82893.chunk.js",
-    "main.js.map": "/VotingRepository/static/js/main.01c82893.chunk.js.map",
+    "main.js": "/VotingRepository/static/js/main.b2ca2b9b.chunk.js",
+    "main.js.map": "/VotingRepository/static/js/main.b2ca2b9b.chunk.js.map",
     "runtime-main.js": "/VotingRepository/static/js/runtime-main.6ab9cae1.js",
     "runtime-main.js.map": "/VotingRepository/static/js/runtime-main.6ab9cae1.js.map",
     "static/css/2.37c457eb.chunk.css": "/VotingRepository/static/css/2.37c457eb.chunk.css",
     "static/js/2.7e3c99ba.chunk.js": "/VotingRepository/static/js/2.7e3c99ba.chunk.js",
     "static/js/2.7e3c99ba.chunk.js.map": "/VotingRepository/static/js/2.7e3c99ba.chunk.js.map",
     "index.html": "/VotingRepository/index.html",
-    "precache-manifest.d10b3e9c103537bf8a3748a2207ae6cf.js": "/VotingRepository/precache-manifest.d10b3e9c103537bf8a3748a2207ae6cf.js",
+    "precache-manifest.047dfa634a4aacdb8a85f61071426893.js": "/VotingRepository/precache-manifest.047dfa634a4aacdb8a85f61071426893.js",
     "service-worker.js": "/VotingRepository/service-worker.js",
     "static/css/2.37c457eb.chunk.css.map": "/VotingRepository/static/css/2.37c457eb.chunk.css.map",
     "static/css/main.1383865a.chunk.css.map": "/VotingRepository/static/css/main.1383865a.chunk.css.map",
@@ -24,6 +24,6 @@
     "static/css/2.37c457eb.chunk.css",
     "static/js/2.7e3c99ba.chunk.js",
     "static/css/main.1383865a.chunk.css",
-    "static/js/main.01c82893.chunk.js"
+    "static/js/main.b2ca2b9b.chunk.js"
   ]
 }
