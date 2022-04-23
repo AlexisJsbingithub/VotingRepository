@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/VotingRepository/static/css/main.1383865a.chunk.css",
+    "main.js": "/VotingRepository/static/js/main.64dbb8b3.chunk.js",
+    "main.js.map": "/VotingRepository/static/js/main.64dbb8b3.chunk.js.map",
+    "runtime-main.js": "/VotingRepository/static/js/runtime-main.6ab9cae1.js",
+    "runtime-main.js.map": "/VotingRepository/static/js/runtime-main.6ab9cae1.js.map",
+    "static/css/2.37c457eb.chunk.css": "/VotingRepository/static/css/2.37c457eb.chunk.css",
+    "static/js/2.7e3c99ba.chunk.js": "/VotingRepository/static/js/2.7e3c99ba.chunk.js",
+    "static/js/2.7e3c99ba.chunk.js.map": "/VotingRepository/static/js/2.7e3c99ba.chunk.js.map",
+    "index.html": "/VotingRepository/index.html",
+    "precache-manifest.54713c78e595e4ea57735006b8c91d52.js": "/VotingRepository/precache-manifest.54713c78e595e4ea57735006b8c91d52.js",
+    "service-worker.js": "/VotingRepository/service-worker.js",
+    "static/css/2.37c457eb.chunk.css.map": "/VotingRepository/static/css/2.37c457eb.chunk.css.map",
+    "static/css/main.1383865a.chunk.css.map": "/VotingRepository/static/css/main.1383865a.chunk.css.map",
+    "static/media/NotVoter.png": "/VotingRepository/static/media/NotVoter.37482ed3.png",
+    "static/media/RegisteringProposals.png": "/VotingRepository/static/media/RegisteringProposals.da01d1c4.png",
+    "static/media/RegisteringVoters.png": "/VotingRepository/static/media/RegisteringVoters.3a192f61.png",
+    "static/media/VotingSession.png": "/VotingRepository/static/media/VotingSession.1471be1c.png",
+    "static/media/WinningProposal.png": "/VotingRepository/static/media/WinningProposal.4655f748.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6ab9cae1.js",
+    "static/css/2.37c457eb.chunk.css",
+    "static/js/2.7e3c99ba.chunk.js",
+    "static/css/main.1383865a.chunk.css",
+    "static/js/main.64dbb8b3.chunk.js"
+  ]
+}
