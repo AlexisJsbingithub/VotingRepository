@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import VotingContract from "./contracts/Voting.json";
 import getWeb3 from "./getWeb3";
+
+//Images for the workflow status management
 import notVoter from "./images/NotVoter.png";
 import registeringVoters from "./images/RegisteringVoters.png";
 import registeringProposals from "./images/RegisteringProposals.png";
@@ -12,6 +14,7 @@ import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Table from 'react-bootstrap/Table';
 
+//One composant
 import BlockListFindVoter from "./BlockListFindVoter.js";
 
 import "./AppVoting.css";
@@ -35,6 +38,7 @@ class AppVoting extends Component {
         deployedNetwork && deployedNetwork.address,
       );
 
+      //initialisation of the owner
       const owner = await instance.methods.owner().call();
 
       // Set web3, accounts, and contract to the state, and then proceed with an example of interacting with the contract's methods.
@@ -51,7 +55,7 @@ class AppVoting extends Component {
   runInit = async () => {
     const { accounts, contract, owner} = this.state;
 
-    //Events
+    //Events mamagement
     const options = {
         fromBlock: 0,
         toBlock: 'latest'
@@ -60,18 +64,14 @@ class AppVoting extends Component {
     const listProposals = await contract.getPastEvents("ProposalRegistered", options);
     const listVotes = await contract.getPastEvents("Voted", options);
 
-
-    let voter = await contract.methods.getVoter(accounts[0]).call({from : accounts[0]}).catch(error => null);;
-
     //Init owner as a voter
+    let voter = await contract.methods.getVoter(accounts[0]).call({from : accounts[0]}).catch(error => null);;
     if(voter==null && accounts[0]==owner)
     {
       voter = await this.state.contract.methods.addVoter(accounts[0]).send({from : owner});
     }
 
-    const workflowStatus = await contract.methods.workflowStatus().call({from: owner});
-
-    //Mise à jour du tableau des proposals
+    //Update of the proposals table
     const proposalsDescription =[];
     if(listProposals!=null)
     {
@@ -83,6 +83,7 @@ class AppVoting extends Component {
       }
     }
 
+    const workflowStatus = await contract.methods.workflowStatus().call({from: owner});
     const winningProposalID = await contract.methods.winningProposalID().call({from : accounts[0]});
 
 
@@ -113,7 +114,7 @@ class AppVoting extends Component {
   }
 
 
-  //Addition of the proposals
+  //Addition of a proposal
   addProposal = async () => {
     const { accounts, contract } = this.state;
     const proposalValue = this.proposal.value;
@@ -130,7 +131,7 @@ class AppVoting extends Component {
   }
 
 
-  //Voting proposal Proposal not found
+  //Voting for a proposal
   setVote = async () => {
     const {accounts, contract} = this.state;
     const voteValue = this.vote.value;
@@ -152,7 +153,7 @@ class AppVoting extends Component {
   }
 
 
-  //Finish registering voter and start voting
+  //Finish registering voter and start proposals
   startProposals = async () => {
     const {contract, accounts} = this.state;
 
@@ -190,7 +191,7 @@ class AppVoting extends Component {
   }
 
 
-  //End voting
+  //Launch of the winner search
   tallyVotes = async () => {
     const {contract, accounts} = this.state;
 
@@ -221,14 +222,6 @@ class AppVoting extends Component {
             <tr></tr>
           </tbody>
         </Table>
-      </div>
-    );
-
-    //Next WorkFlow Status
-    const blockEndProposalsStartVoting =
-    (
-      <div className="test">
-        <button onClick={this.endProposalsStartVoting}>Finalise proposals and start voting</button>
       </div>
     );
 
@@ -294,7 +287,15 @@ class AppVoting extends Component {
       </div>
     );
 
-    //Next WorkFlow Status
+    //Next step in the workflow: end of proposals and start of voting
+    const blockEndProposalsStartVoting =
+    (
+      <div className="test">
+        <button onClick={this.endProposalsStartVoting}>Finalise proposals and start voting</button>
+      </div>
+    );
+
+    //Next step in the workflow: end of voting
     const blockEndVoting =
     (
       <div className="test">
@@ -302,7 +303,7 @@ class AppVoting extends Component {
       </div>
     );
 
-    //Next WorkFlow Status
+    //Next step in the workflow: launch of the winner search
     const blockTallyVotes =
     (
       <div className="test">
@@ -362,7 +363,7 @@ class AppVoting extends Component {
                           ""
             )
             :
-            // If is another addresse
+            // If is another address
             (
               (this.state.listVoters == null || this.state.listVoters.length == 0)?
                 <img className="imgNotVoter" src={notVoter}/>
@@ -395,7 +396,7 @@ class AppVoting extends Component {
         </div>
         <br></br>
 
-        {/*BUTTON AREA TO GO TO NEXT STATUS*/}
+        {/*GO TO NEXT STATUS AREA*/}
         {
           // If is the administrator
           (this.state.accounts[0] == this.state.owner)?
@@ -458,7 +459,7 @@ class AppVoting extends Component {
                     ""
           )
           :
-          // If the address is not the administrator
+          // If is another address
           (
             (this.state.listVoters == null || this.state.listVoters.length == 0)?
               ""
